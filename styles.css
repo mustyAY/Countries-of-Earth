@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+nav{
+    background-image: url("./assets/Earth.webp");
+    background-size: 101vw;
+    background-repeat: no-repeat;
+    height: 280px;
+    padding: 60px 0;
+    text-align: center;
+}
+
+section{
+    background-color: #2424;
+    min-height: 100vh;
+}
+
+.container{
+    padding: 60px 12px;
+}
+
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav__container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav__title{
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 32px;
+    color: white;
+}
+
+.input__wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    margin-right: 16px;
+    height: 65px;
+    width: 350px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+figure{
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+img{
+    display: flex;
+    width: 100%;
+    transition: all 600ms ease;
+}
+
+.fa-search{
+    color: grey;
+    height: 45px;
+    width: 65px;
+}
+
+.countries{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.country{
+    width: 20%;
+    margin: 8px;
+}
+
+.country__img--bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242424;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 450ms ease;
+}
+
+.country:hover .country__img--bg{
+    opacity: 0.7;
+    visibility: visible;
+    z-index: 1;
+}
+
+.country__img--wrapper:hover img{
+    transform: scale(1.07);
+    filter: blur(0.5px);
+}
+
+.fa-arrow-up{
+    font-size: 30px;
+    position: fixed;
+    color: bisque;
+    bottom: 18px;
+    right: 30px;
+    z-index: 2;
+}
+
+
