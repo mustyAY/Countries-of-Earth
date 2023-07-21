@@ -9,10 +9,17 @@
  renderCountries();
 
  function countryHTML(country){
-  return `<div class="country">
-      <figure class="country__img--wrapper">
-      <div class="country__img--bg">${country.name.common}</div>
-      <img src="${country.flags.svg}" alt="" class="country__img">
-      </figure>
-   </div>`
+  return `<div class="country" onclick="countryDetails()">
+            <figure class="country__img--wrapper">
+               <div class="country__img--bg">${country.name.common}</div>
+               <img src="${country.flags.svg}" alt="" class="country__img">
+            </figure>
+         </div>`
+ }
+
+ function countryDetailsHTML(){
+   return ``
+ }
+
+ function countryDetails(){
  }
