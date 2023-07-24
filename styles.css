@@ -94,7 +94,6 @@ button{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    display: none;
 }
 
 .country{
@@ -150,7 +149,6 @@ COUNTRY DETAILS
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* display: none; */
 }
 
 li{
@@ -182,6 +180,14 @@ li{
     height: 100%;
     max-height: 250px;
     margin-top: 16px;
+}
+
+.country-details__img--2{
+    padding: 0 20%;
+}
+
+.country__infos{
+    margin-top: 32px;
 }
 
 
