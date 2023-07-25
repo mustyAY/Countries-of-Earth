@@ -102,6 +102,16 @@ button{
     margin: 8px;
 }
 
+.country-search .country{
+    display: none
+}
+
+.searched-country{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .country__img--bg{
     position: absolute;
     top: 0;

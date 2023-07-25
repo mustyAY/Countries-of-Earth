@@ -1,12 +1,11 @@
+const cca3 = localStorage.getItem("code");
+const cca2 = localStorage.getItem("code");
+const ccn3 = localStorage.getItem("code");
+const countryEl = document.querySelector('.country-details');
 
-  async function renderCountry(){
-    const cca3 = localStorage.getItem("code");
-    const cca2 = localStorage.getItem("code");
-    const ccn3 = localStorage.getItem("code");
-    const cioc = localStorage.getItem("code");
+ async function renderCountry(){
     const country = await fetch(`https://restcountries.com/v3.1/alpha?codes=${cca3},${cca2},${ccn3}`);
     const countryData = await country.json();
-    const countryEl = document.querySelector('.country-details');
     countryEl.innerHTML = countryData.map(details => countryDetailsHTML(details)).join('');
     console.log(countryData);
   }
@@ -49,5 +48,5 @@
                 <li class="countryinfo maps">
                 Maps: <a href="${details.maps.googleMaps}" target="_blank">${details.maps.googleMaps}</a>
                 </li>
-            </ol>`
+            </ol>`;
   }
