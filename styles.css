@@ -155,6 +155,10 @@ COUNTRY DETAILS
 
 */
 
+.country__infos{
+    max-width: 600px;
+}
+
 .country-details{
     display: flex;
     flex-direction: column;
@@ -198,6 +202,10 @@ li{
 
 .country__infos{
     margin-top: 32px;
+}
+
+.time-zone{
+    line-height: 1.5;
 }
 
 

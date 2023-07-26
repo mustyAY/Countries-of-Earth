@@ -36,6 +36,8 @@ const searchedEl = document.querySelector('.searched-country');
  }
 
  function countrySearchHTML(search){
+  const curr = search.currencies;
+
    return `<div class="country-details__img--container">
                <figure class="country-details__img--wrapper">
                <span class="country-details__img--title">Flag</span>
@@ -64,6 +66,12 @@ const searchedEl = document.querySelector('.searched-country');
                </li>
                <li class="countryinfo population">
                Population: ${search.population}
+               </li>
+               <li class="countryinfo currency">
+               Currency: ${Object.values(curr)[0].name}, ${Object.values(curr)[0].symbol}
+               </li>
+               <li class="countryinfo time-zone">
+                Time Zone(s): ${search.timezones.join(', ')}
                </li>
                <li class="countryinfo UN">
                UN Member: ${search.unMember}
