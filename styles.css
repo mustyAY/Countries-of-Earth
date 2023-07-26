@@ -155,6 +155,16 @@ COUNTRY DETAILS
 
 */
 
+.left-arrow {
+    text-decoration: none;
+    font-size: 30px;
+    position: fixed;
+    color: #7342d6;
+    top: 60px;
+    left: 60px;
+    z-index: 2;
+}
+
 .country__infos{
     max-width: 600px;
 }
@@ -207,6 +217,32 @@ li{
 .time-zone{
     line-height: 1.5;
 }
+
+.error{
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    padding: 12px 0;
+    min-width: 300px;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 8px;
+    background-color: rgb(245, 245, 245);
+    font-size: 20px;
+    color: brown;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.error__message .error{
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+}
+
+
 
 
 

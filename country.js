@@ -1,13 +1,19 @@
 const cca3 = localStorage.getItem("code");
 const cca2 = localStorage.getItem("code");
 const ccn3 = localStorage.getItem("code");
+
 const countryEl = document.querySelector('.country-details');
+const errorEl = document.querySelector('.error');
 
  async function renderCountry(){
+  try{
     const country = await fetch(`https://restcountries.com/v3.1/alpha?codes=${cca3},${cca2},${ccn3}`);
     const countryData = await country.json();
     countryEl.innerHTML = countryData.map(details => countryDetailsHTML(details)).join('');
-    console.log(countryData);
+  }catch(err){
+    document.body.classList += ' error__message';
+  }
+    // console.log(countryData);
   }
 
   renderCountry();

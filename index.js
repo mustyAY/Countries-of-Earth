@@ -21,13 +21,13 @@ const searchedEl = document.querySelector('.searched-country');
    console.log(searchedData)
  }
 
- function showCountryDetails(cca3,cca2,ccn3){
-   localStorage.setItem("code", cca3,cca2,ccn3);
+ function showCountryDetails(cca3, cca2, ccn3){
+   localStorage.setItem("code", cca3, cca2, ccn3);
    window.location.href = `${window.location.origin}/country.html`;
  }
 
  function countryHTML(country){
-  return `<div class="country" onclick="showCountryDetails(${country.cca3,country.cca2,country.ccn3})">
+  return `<div class="country" onclick="showCountryDetails(${country.cca3, country.cca2, country.ccn3})">
             <figure class="country__img--wrapper">
                <div class="country__img--bg">${country.name.common}</div>
                <img src="${country.flags.svg}" alt="" class="country__img">
