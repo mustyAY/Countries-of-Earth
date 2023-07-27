@@ -2,10 +2,16 @@ const countriesEl = document.querySelector('.countries');
 const searchedEl = document.querySelector('.searched-country');
 
  async function renderCountries(){
+
+    document.body.classList =+ ' countries__loading';
+
     const countries = await fetch("https://restcountries.com/v3.1/all");
     const countriesData = await countries.json();
+
+    document.body.classList.remove('countries__loading');
+
     countriesEl.innerHTML = countriesData.map(country => countryHTML(country)).join("");
-    console.log(countriesData)
+    console.log(countriesData);
  }
 
  renderCountries();
@@ -15,10 +21,16 @@ const searchedEl = document.querySelector('.searched-country');
 
    countriesEl.classList += " country-search";
 
-   const searched = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
-   const searchedData = await searched.json();
-   searchedEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
-   console.log(searchedData)
+   try{
+      const searched = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
+      const searchedData = await searched.json();
+      searchedEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
+      console.log(searchedData);
+   }catch(err){
+      document.body.classList += ' search-error__message';
+   }
+
+   
  }
 
  function showCountryDetails(cca3, cca2, ccn3){
@@ -37,8 +49,10 @@ const searchedEl = document.querySelector('.searched-country');
 
  function countrySearchHTML(search){
   const curr = search.currencies;
+  const lang = search.languages;
 
-   return `<div class="country-details__img--container">
+   return `<a href="index.html" class="searched-country__back--btn"><i class="fas fa-arrow-left"></i> Home</a>
+            <div class="country-details__img--container">
                <figure class="country-details__img--wrapper">
                <span class="country-details__img--title">Flag</span>
                <img src="${search.flags.svg}" alt="not available" class="country-details__img country-details__img--1">
@@ -66,6 +80,9 @@ const searchedEl = document.querySelector('.searched-country');
                </li>
                <li class="countryinfo population">
                Population: ${search.population}
+               </li>
+               <li class="countryinfo language">
+               Language(s): ${Object.values(lang).join(', ')}
                </li>
                <li class="countryinfo currency">
                Currency: ${Object.values(curr)[0].name}, ${Object.values(curr)[0].symbol}

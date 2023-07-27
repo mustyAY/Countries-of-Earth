@@ -7,13 +7,21 @@ const errorEl = document.querySelector('.error');
 
  async function renderCountry(){
   try{
+
+    countryEl.classList += ' details-flags__loading';
+
     const country = await fetch(`https://restcountries.com/v3.1/alpha?codes=${cca3},${cca2},${ccn3}`);
     const countryData = await country.json();
+
+    countryEl.classList.remove('details-flags__loading');
+
     countryEl.innerHTML = countryData.map(details => countryDetailsHTML(details)).join('');
   }catch(err){
+
     document.body.classList += ' error__message';
+
   }
-    // console.log(countryData);
+    console.log(countryData);
   }
 
   renderCountry();
@@ -23,10 +31,12 @@ const errorEl = document.querySelector('.error');
     return `<div class="country-details__img--container">
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Flag</span>
+                <i class="fas fa-spinner details-img__loading--spinner"></i>
                 <img src="${details.flags.svg}" alt="not available" class="country-details__img country-details__img--1">
                 </figure>
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Coat Of Arms</span>
+                <i class="fas fa-spinner details-img__loading--spinner"></i>
                 <img src="${details.coatOfArms.svg}" alt="not available" class="country-details__img country-details__img--2">
                 </figure>
             </div>

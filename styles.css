@@ -90,10 +90,38 @@ button{
 }
 
 .countries{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.countries__loading--spinner{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    font-size: 60px;
+    color: white;
+    display: none;
+}
+
+.countries__loading .countries__loading--spinner{
+    display: block;
+}
+
+.fa-spinner{
+    animation: rotation 1000ms infinite linear;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .country{
@@ -107,9 +135,21 @@ button{
 }
 
 .searched-country{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.searched-country__back--btn{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-decoration: none;
+    font-size: 30px;
+    position: absolute;
+    color: #7342d6;
+    z-index: 2;
 }
 
 .country__img--bg{
@@ -158,7 +198,7 @@ COUNTRY DETAILS
 .left-arrow {
     text-decoration: none;
     font-size: 30px;
-    position: fixed;
+    position: absolute;
     color: #7342d6;
     top: 60px;
     left: 60px;
@@ -190,9 +230,25 @@ li{
 }
 
 .country-details__img--wrapper{
+    position: relative;
+    min-height: 150px;
     text-align: center;
     width: 50%;
 }
+
+.details-img__loading--spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    display: none !important;
+}
+
+.details-flags__loading .details-img__loading--spinner{
+    display: block;
+}
+
 
 .country-details__img--title{
     font-size: 26px;
@@ -214,17 +270,21 @@ li{
     margin-top: 32px;
 }
 
+.language{
+    line-height: 1.5;
+}
+
 .time-zone{
     line-height: 1.5;
 }
 
-.error{
+.error, .search-error{
     position: absolute;
     text-align: center;
     left: 50%;
     top: 50%;
     padding: 12px 0;
-    min-width: 300px;
+    width: auto;
     transform: translate(-50%,-50%);
     border: 1px solid rgb(245, 245, 245);
     border-radius: 8px;
@@ -237,6 +297,12 @@ li{
 }
 
 .error__message .error{
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+}
+
+.search-error__message .search-error{
     opacity: 1;
     visibility: visible;
     z-index: 100;
