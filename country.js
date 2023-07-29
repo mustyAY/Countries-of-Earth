@@ -16,6 +16,7 @@ const errorEl = document.querySelector('.error');
     document.body.classList.remove('details-flags__loading');
 
     countryEl.innerHTML = countryData.map(details => countryDetailsHTML(details)).join('');
+    
   }catch(err){
 
     document.body.classList += ' error__message';

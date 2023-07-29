@@ -15,6 +15,7 @@ const searchedEl = document.querySelector('.searched-country');
 
  renderCountries();
 
+
  async function onSearchChange(event){
 
    const name = event.target.value;
@@ -22,15 +23,18 @@ const searchedEl = document.querySelector('.searched-country');
    countriesEl.classList += " country-search";
 
    try{
+
       const searched = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
       const searchedData = await searched.json();
       searchedEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
+      
    }catch(err){
-      document.body.classList += ' search-error__message';
-   }
 
-   
- }
+        return document.body.classList += ' search-error__message';
+        
+   }
+   document.body.classList.remove('search-error__message')
+}
 
  function showCountryDetails(cca3, cca2, ccn3){
    localStorage.setItem("code", cca3, cca2, ccn3);
