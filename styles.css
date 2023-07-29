@@ -11,6 +11,10 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 nav{
     position: relative;
     background-size: 101vw;
@@ -141,10 +145,7 @@ button{
     animation: rotation 1000ms infinite linear;
 }
 
-.error__message .fa-spinner{
-    display: none;
-}
-
+.error__message .fa-spinner,
 .search-error__message .fa-spinner{
     display: none;
 }
@@ -164,19 +165,23 @@ button{
     margin: 8px;
 }
 
-.country-search .country{
-    display: none
-}
-
-.searched-country{
-    position: relative;
+.country-search .countries{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.search-error__message .searched-country{
+.error__message--wrapper{
+    position: relative;
+}
+
+.search-error__message .countries{
     display: none;
+}
+
+.searched__back-btn--container{
+    padding-bottom: 32px;
 }
 
 .searched-country__back--btn{
@@ -188,6 +193,12 @@ button{
     position: absolute;
     color: #7342d6;
     z-index: 2;
+    display: none;
+}
+
+.search-error__message .searched-country__back--btn,
+.country-search .searched-country__back--btn{
+    display: block;
 }
 
 .country__img--bg{
@@ -225,6 +236,10 @@ button{
     bottom: 18px;
     right: 30px;
     z-index: 2;
+}
+
+.country-search .fa-arrow-up{
+    display: none;
 }
 
 /*
@@ -434,17 +449,8 @@ li{
     }
 }
 
+@media (max-width: 530px) {
 
-@media (max-width: 470px) {
-
-    input{
-        width: 250px;
-    }
-
-    li{
-        font-size: 20px;
-        font-weight: 400;
-    }
 
     .country-details__img--title{
         font-size: 22px;
@@ -472,20 +478,21 @@ li{
     }
 }
 
-@media (max-width: 375px){
 
-    .nav__title{
-        font-size: 28px;
-        font-weight: 500;
-    }
+@media (max-width: 470px) {
 
     input{
-        width: 200px;
+        width: 250px;
     }
 
-    .country{
-        width: 70%;
+    li{
+        font-size: 20px;
+        font-weight: 400;
     }
+
+}
+
+@media (max-width: 420px) {
 
     li{
         font-size: 18px;
@@ -501,6 +508,46 @@ li{
         font-weight: 500;
     }
 }
+
+
+@media (max-width: 375px){
+
+    .nav__title{
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    input{
+        width: 200px;
+    }
+
+    .country{
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    .country-details__img{
+        max-width: 250px;
+    }
+
+    .country__infos{
+        max-width: 250px;
+    }
+
+    li{
+        font-size: 16px;
+    }
+
+    .maps{
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+}
+
 
 
 

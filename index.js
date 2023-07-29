@@ -1,5 +1,4 @@
 const countriesEl = document.querySelector('.countries');
-const searchedEl = document.querySelector('.searched-country');
 
  async function renderCountries(){
 
@@ -20,18 +19,18 @@ const searchedEl = document.querySelector('.searched-country');
 
    const name = event.target.value;
 
-   countriesEl.classList += " country-search";
+   document.body.classList += " country-search";
 
    try{
 
       const searched = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
       const searchedData = await searched.json();
-      searchedEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
+      countriesEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
       
    }catch(err){
 
         return document.body.classList += ' search-error__message';
-        
+
    }
    document.body.classList.remove('search-error__message')
 }
@@ -55,8 +54,7 @@ const searchedEl = document.querySelector('.searched-country');
   const curr = search.currencies;
   const lang = search.languages;
 
-   return `<a href="index.html" class="searched-country__back--btn"><i class="fas fa-arrow-left"></i> Home</a>
-            <div class="country-details__img--container">
+   return ` <div class="country-details__img--container">
                <figure class="country-details__img--wrapper">
                <span class="country-details__img--title">Flag</span>
                <img src="${search.flags.svg}" alt="not available" class="country-details__img country-details__img--1">
