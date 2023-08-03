@@ -127,27 +127,28 @@ button{
     flex-wrap: wrap;
 }
 
+.countries__loading .countries{
+    margin-top: 64px;
+    justify-content: center;
+}
+
 .countries__loading--spinner{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -75%) !important;
     font-size: 60px;
     color: white;
-    display: none;
+    visibility: hidden;
 }
 
 .countries__loading .countries__loading--spinner{
-    display: block;
+    visibility: visible;
 }
 
 .fa-spinner{
-    animation: rotation 1000ms infinite linear;
+    animation: rotation infinite 1000ms linear;
 }
 
 .error__message .fa-spinner,
 .search-error__message .fa-spinner{
-    display: none;
+    visibility: hidden;
 }
 
 @keyframes rotation {
@@ -274,6 +275,13 @@ COUNTRY DETAILS
     margin-top: 64px;
 }
 
+.details-flags__loading .country-details{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
 li{
     list-style-type: circle;
     font-size: 26px;
@@ -302,17 +310,13 @@ li{
 }
 
 .details-img__loading--spinner{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important;
     font-size: 60px;
     color: white;
-    display: none;
+    visibility: hidden;
 }
 
 .details-flags__loading .details-img__loading--spinner{
-    display: block;
+    visibility: visible;
 }
 
 
