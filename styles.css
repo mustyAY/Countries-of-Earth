@@ -469,6 +469,11 @@ li{
     .searched-country__back--btn, .left-arrow{
         font-size: 28px;
     }
+
+    .search-error{
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
 @media (max-width: 530px) {
@@ -552,6 +557,11 @@ li{
 
     input{
         width: 200px;
+    }
+
+    .search-error{
+        font-size: 14px;
+        font-weight: 400;
     }
 
 }

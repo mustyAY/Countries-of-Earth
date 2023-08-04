@@ -39,7 +39,7 @@ async function onSearchChange(event) {
 
     setTimeout(() => {
       document.body.classList.remove("search-error__message")
-    }, 4500);
+    }, 3500);
     
   }
 
