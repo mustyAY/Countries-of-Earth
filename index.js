@@ -41,8 +41,11 @@ const countriesEl = document.querySelector('.countries');
         return document.body.classList += ' search-error__message';
 
    }
+   event.preventDefault()
 
    document.body.classList.remove('search-error__message');
+
+   event.preventDefault()
 }
 
  function showCountryDetails(code){

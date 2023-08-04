@@ -436,6 +436,10 @@ li{
 
 @media (max-width: 576px) {
 
+    nav{
+        min-height: 220px;
+    }
+
     .nav__title{
         font-size: 32px;
         font-weight: 700;
