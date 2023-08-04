@@ -129,6 +129,8 @@ button{
 
 .countries__loading .countries{
     margin-top: 64px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -147,6 +149,7 @@ button{
 }
 
 .error__message .fa-spinner,
+.error__message .details-img__loading--spinner,
 .search-error__message .fa-spinner{
     visibility: hidden;
 }
@@ -162,7 +165,8 @@ button{
 
 .country{
     cursor: pointer;
-    width: 20%;
+    /* width: 20%; */
+    width: 15%;
     margin: 8px;
 }
 
@@ -171,6 +175,14 @@ button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.country-search .country{
+    display: none;
+}
+
+.country-loading .countries__loading--spinner{
+    visibility: visible;
 }
 
 .error__message--wrapper{
@@ -183,6 +195,7 @@ button{
 
 .searched__back-btn--container{
     padding-bottom: 32px;
+    display: none;
 }
 
 .searched-country__back--btn{
@@ -194,11 +207,10 @@ button{
     position: absolute;
     color: #7342d6;
     z-index: 2;
-    display: none;
 }
 
-.search-error__message .searched-country__back--btn,
-.country-search .searched-country__back--btn{
+.search-error__message .searched__back-btn--container,
+.country-search .searched__back-btn--container{
     display: block;
 }
 
@@ -277,9 +289,10 @@ COUNTRY DETAILS
 
 .details-flags__loading .country-details{
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
+    margin-top: 0;
 }
 
 li{
@@ -382,6 +395,11 @@ li{
 
 
 @media (max-width: 800px){
+
+    .country{
+        width: 20%;
+    }
+
     .country-details__img--wrapper{
         display: flex;
         align-items: center;
@@ -403,10 +421,6 @@ li{
     .nav__title{
         font-size: 36px;
         font-weight: 700;
-    }
-
-    .country{
-        width: 25%;
     }
     
     li{
@@ -436,7 +450,7 @@ li{
     }
 
     .country{
-        width: calc(100% / 3);
+        width: 25%;
     }
     
     li{
@@ -455,6 +469,9 @@ li{
 
 @media (max-width: 530px) {
 
+    .country__img--bg{
+        font-size: 14px;
+    }
 
     .country-details__img--title{
         font-size: 22px;
@@ -498,6 +515,10 @@ li{
 
 @media (max-width: 420px) {
 
+    .country{
+        width: calc(100%/3);
+    }
+
     li{
         font-size: 18px;
         font-weight: 300;
@@ -525,13 +546,13 @@ li{
         width: 200px;
     }
 
-    .country{
-        width: 70%;
-    }
-
 }
 
 @media (max-width: 370px) {
+
+    .country__img--bg{
+        font-size: 12px;
+    }
 
     .country-details__img{
         max-width: 250px;

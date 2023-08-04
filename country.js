@@ -1,6 +1,4 @@
 const cca3 = localStorage.getItem("code");
-const cca2 = localStorage.getItem("code");
-const ccn3 = localStorage.getItem("code");
 
 const countryEl = document.querySelector('.country-details');
 const errorEl = document.querySelector('.error');
@@ -10,7 +8,7 @@ const errorEl = document.querySelector('.error');
 
     document.body.classList += ' details-flags__loading';
 
-    const country = await fetch(`https://restcountries.com/v3.1/alpha?codes=${cca3},${cca2},${ccn3}`);
+    const country = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
     const countryData = await country.json();
 
     document.body.classList.remove('details-flags__loading');
@@ -33,11 +31,11 @@ const errorEl = document.querySelector('.error');
     return `<div class="country-details__img--container">
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Flag</span>
-                <img src="${details.flags.svg}" alt="not available" class="country-details__img country-details__img--1">
+                <img src="${details.flags.svg}" alt="not available. ps: you may want to reload" class="country-details__img country-details__img--1">
                 </figure>
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Coat Of Arms</span>
-                <img src="${details.coatOfArms.svg}" alt="not available" class="country-details__img country-details__img--2">
+                <img src="${details.coatOfArms.svg}" alt="not available. ps: you may want to reload" class="country-details__img country-details__img--2">
                 </figure>
             </div>
             <div class="country__infos--container">

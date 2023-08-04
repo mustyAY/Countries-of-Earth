@@ -19,13 +19,17 @@ const countriesEl = document.querySelector('.countries');
 
    const name = event.target.value;
 
-   document.body.classList += " country-search";
+   document.body.classList += " country-search country-loading";
 
    try{
 
       const searched = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
       const searchedData = await searched.json();
+
+      document.body.classList.remove('country-loading')
+
       countriesEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
+
       
    }catch(err){
 
@@ -36,13 +40,14 @@ const countriesEl = document.querySelector('.countries');
    document.body.classList.remove('search-error__message')
 }
 
- function showCountryDetails(cca3, cca2, ccn3){
-   localStorage.setItem("code", cca3, cca2, ccn3);
+ function showCountryDetails(code){
+   localStorage.setItem("code", code);
    window.location.href = `${window.location.origin}/country.html`;
  }
 
  function countryHTML(country){
-  return `<div class="country" onclick="showCountryDetails(${country.cca3, country.cca2, country.ccn3})">
+   let code = country.ccn3;
+  return `<div class="country" onclick="showCountryDetails(${code})">
             <figure class="country__img--wrapper">
                <div class="country__img--bg">${country.name.common}</div>
                <img src="${country.flags.svg}" alt="" class="country__img">
