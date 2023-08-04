@@ -32,8 +32,11 @@ const countriesEl = document.querySelector('.countries');
 
       countriesEl.innerHTML = searchedData.map(search => countrySearchHTML(search)).join('');
 
+      event.preventDefault();
       
    }catch(err){
+
+      event.preventDefault();
 
         return document.body.classList += ' search-error__message';
 
@@ -44,7 +47,7 @@ const countriesEl = document.querySelector('.countries');
 
  function showCountryDetails(code){
    localStorage.setItem("code", code);
-   window.location.href = `./country.html`;
+   window.location.href = "./country.html";
  }
 
  function countryHTML(country){
