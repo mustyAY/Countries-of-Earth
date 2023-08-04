@@ -17,6 +17,8 @@ const countriesEl = document.querySelector('.countries');
 
  async function onSearchChange(event){
 
+   event.preventDefault();
+
    const name = event.target.value;
 
    document.body.classList += " country-search country-loading";
@@ -42,7 +44,7 @@ const countriesEl = document.querySelector('.countries');
 
  function showCountryDetails(code){
    localStorage.setItem("code", code);
-   window.location.href = `${window.location.origin}/country.html`;
+   window.location.href = `${window.location.origin}/Countries-of-Earth/`;
  }
 
  function countryHTML(country){
