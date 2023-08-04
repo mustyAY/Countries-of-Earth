@@ -31,11 +31,11 @@ const errorEl = document.querySelector('.error');
     return `<div class="country-details__img--container">
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Flag</span>
-                <img src="${details.flags.svg}" alt="not available. ps: you may want to reload" class="country-details__img country-details__img--1">
+                <img src="${details.flags.svg}" alt="not available. ps: reloading the page might help :)" class="country-details__img country-details__img--1">
                 </figure>
                 <figure class="country-details__img--wrapper">
                 <span class="country-details__img--title">Coat Of Arms</span>
-                <img src="${details.coatOfArms.svg}" alt="not available. ps: you may want to reload" class="country-details__img country-details__img--2">
+                <img src="${details.coatOfArms.svg}" alt="not available. ps: reloading the page might help :)" class="country-details__img country-details__img--2">
                 </figure>
             </div>
             <div class="country__infos--container">

@@ -14,13 +14,17 @@
     <nav>
       <div class="nav__container">
         <figure class="nav__img--wrapper">
-          <img src="./assets/earth_stars.avif" alt="" class="nav__img">
+          <img src="./assets/earth_stars.avif" alt="" class="nav__img" />
         </figure>
         <div class="nav__title">COUNTRIES OF EARTH</div>
         <div class="input__wrapper">
-          <input type="text" placeholder="Enter Country Name" onchange="onSearchChange(event)"/>
+          <input
+            type="text"
+            placeholder="Enter Country Name"
+            onchange="onSearchChange(event)"
+          />
           <button onclick="onSearchChange(event)">
-            <img src="./assets/search_icon2.png" alt="" class="search__icon">
+            <img src="./assets/search_icon2.png" alt="" class="search__icon" />
           </button>
         </div>
       </div>
@@ -30,14 +34,16 @@
         <div class="row">
           <div class="error__message--wrapper">
             <div class="searched__back-btn--container">
-              <a href="index.html" class="searched-country__back--btn"><i class="fas fa-arrow-left"></i> Home</a>
+              <a href="index.html" class="searched-country__back--btn"
+                ><i class="fas fa-arrow-left"></i> Home</a
+              >
             </div>
             <div class="search-error">
-              Oops! please check your spelling.
+              Oops! please check your spelling or you've used a generic name.
             </div>
           </div>
           <div class="countries">
-          <i class="fas fa-spinner countries__loading--spinner"></i>
+            <i class="fas fa-spinner countries__loading--spinner"></i>
           </div>
         </div>
       </div>
