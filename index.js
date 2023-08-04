@@ -44,7 +44,7 @@ const countriesEl = document.querySelector('.countries');
 
  function showCountryDetails(code){
    localStorage.setItem("code", code);
-   window.location.href = `${window.location.origin}/Countries-of-Earth/`;
+   window.location.href = `./country.html`;
  }
 
  function countryHTML(country){
