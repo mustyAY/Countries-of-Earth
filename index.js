@@ -43,8 +43,6 @@ async function onSearchChange(event) {
     setTimeout(() => {
       document.body.classList.remove("search-error__message");
     }, 3500);
-  } finally {
-    document.querySelector("input").value = "";
   }
 }
 
