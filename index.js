@@ -34,15 +34,18 @@ async function onSearchChange(event) {
       .map((search) => countrySearchHTML(search))
       .join("");
   } catch (err) {
+    if (name === undefined) {
+      throw null;
+    }
 
     document.body.classList += " search-error__message";
 
     setTimeout(() => {
-      document.body.classList.remove("search-error__message")
+      document.body.classList.remove("search-error__message");
     }, 3500);
-    
+  } finally {
+    document.querySelector("input").value = "";
   }
-
 }
 
 function showCountryDetails(code) {
