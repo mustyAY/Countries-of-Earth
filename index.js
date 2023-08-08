@@ -34,7 +34,7 @@ async function onSearchChange(event) {
       .map((search) => countrySearchHTML(search))
       .join("");
   } catch (err) {
-    if (name === undefined) {
+    if (name === undefined || name === "") {
       throw null;
     }
 
